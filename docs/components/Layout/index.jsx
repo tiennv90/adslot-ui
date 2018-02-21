@@ -51,6 +51,7 @@ import InformationBoxExample from '../../examples/InformationBoxExample';
 import SplitPaneExample from '../../examples/SplitPaneExample';
 import HoverDropdownMenuExample from '../../examples/HoverDropdownMenuExample';
 import NavigationExample from '../../examples/NavigationExample';
+import PaginationExample from '../../examples/PaginationExample';
 
 import { PageTitle } from '../../../src';
 
@@ -83,7 +84,7 @@ const componentsBySection = {
   'typography-and-text-layout': ['text-ellipsis'],
   'stats-and-data': ['statistic', 'totals', 'slicey'],
   'icons-and-graphics': ['svg-symbol', 'svg-symbol-circle'],
-  navigation: ['breadcrumb', 'tab', 'hover-dropdown-menu', 'navigation-tabs'],
+  navigation: ['breadcrumb', 'tab', 'hover-dropdown-menu', 'navigation-tabs', 'pagination'],
   'feedback-and-states': ['alert', 'empty', 'spinner', 'pretty-diff'],
   dialogue: ['help-icon-popover', 'avatar'],
   modals: ['confirm-modal'],
@@ -198,6 +199,7 @@ class PageLayout extends React.Component {
             <TabExample />
             <HoverDropdownMenuExample />
             <NavigationExample />
+            <PaginationExample />
 
             <PageTitle title="Feedback and States" />
             <AlertExample />
