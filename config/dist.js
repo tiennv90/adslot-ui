@@ -7,39 +7,22 @@ const commonConfig = require('./common');
 module.exports = () => {
   const buildType = process.env.TYPE || 'development';
 
-  let entries = {
+  const entries = {
     main: resolve(__dirname, '../src'),
     docs: resolve(__dirname, '../docs/run'),
   };
+
   const plugins = [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ];
 
-  if (buildType === 'development') {
-    entries = _.mapKeys(entries, (value, key) => `${key}.dev`);
-  }
-
   if (buildType === 'production') {
     plugins.push(
       new webpack.DefinePlugin({
         // ensures webpack will always optimise for production
         'process.env.NODE_ENV': '"production"',
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-        output: {
-          comments: false,
-        },
-        sourceMap: false,
-        include: /\.js$/,
-        parallel: {
-          cache: true,
-          workers: 2, // run on two cores #GSD
-        },
       })
     );
   }

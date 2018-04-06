@@ -1,12 +1,17 @@
-const { resolve } = require('path');
+const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const srcPath = resolve(__dirname, '../src');
-const docsPath = resolve(__dirname, '../docs');
+const srcPath = path.resolve(__dirname, '../src');
+const docPath = path.resolve(__dirname, '../docs');
 
 module.exports = {
+  mode: 'production',
+  bail: true,
+  devtool: false,
+  entry: path.resolve(docPath, 'run'),
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx'],
@@ -18,45 +23,35 @@ module.exports = {
       styles: `${srcPath}/styles/`, // When importing from `.scss` files prefix with ~ like `@import ~styles/variables`
     },
   },
-  context: srcPath,
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'adslot-ui.doc.js',
+  },
   module: {
+    strictExportPresence: true,
     rules: [
       {
-        enforce: 'pre', // Lint before babel transpiles; fail fast on syntax
         test: /\.(js|jsx)$/,
-        exclude: [/node_modules/, /(\.spec)\.(js|jsx)$/],
-        include: [srcPath, docsPath],
-        use: ['eslint-loader'],
+        loader: require.resolve('eslint-loader'),
+        enforce: 'pre',
+        include: [docPath, srcPath],
       },
-
-      // "url" loader works like "file" loader except that it embeds assets smaller than specified limit in bytes
-      // as data URLs to avoid requests.
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 8192,
-        },
-      },
-
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: [/node_modules/, /(\.spec)\.(js|jsx)$/],
-        include: [srcPath, docsPath],
-        options: {
-          // This is a feature of `babel-loader` for webpack (not Babel itself). It enables caching results
-          // in ./node_modules/.cache/babel-loader/ directory for faster rebuilds.
-          cacheDirectory: true,
-        },
+        include: [docPath, srcPath],
       },
-
       {
-        test: /\.scss/,
+        test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader', // "css-loader" resolves paths in CSS and adds assets as dependencies.
-
+          {
+            loader: require.resolve('css-loader'),
+            options: {
+              minimize: true,
+              sourceMap: false,
+            },
+          },
           {
             loader: 'postcss-loader', // "postcss-loader" applies autoprefixer to our CSS.
             options: {
@@ -72,14 +67,34 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
       },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: false,
+        parallel: true,
+        uglifyOptions: {
+          ecma: 8,
+          compress: {
+            warnings: false,
+            comparisons: false,
+          },
+          output: {
+            comments: false,
+            ascii_only: true,
+          },
+        },
+      }),
+      new OptimizeCSSAssetsPlugin(),
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'adslot-ui-[name].css',
+      filename: 'adslot-ui.doc.css',
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   performance: false,
 };

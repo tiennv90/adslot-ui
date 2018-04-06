@@ -2,7 +2,9 @@
   "name": "adslot-ui",
   "version": "24.2.0",
   "description": "Core component library. By Adslot",
-  "main": "dist/adslot-ui-main.js",
+  "main": "dist/adslot-ui.min.js",
+  "module": "src",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "protect-master": "./scripts/protect-master",
@@ -56,6 +58,7 @@
   "author": "Adslot",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",

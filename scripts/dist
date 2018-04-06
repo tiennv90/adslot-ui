@@ -3,8 +3,12 @@
 echo 'Deleting distribution files...'
 npm run clean
 
-echo 'Generating development build...'
-TYPE=development webpack --bail --env=dist --progress --hide-modules
+echo 'Generating production build for browser...'
+NODE_ENV=production webpack --progress -p --hide-modules --config ./config/webpack.dist.js
 
-echo 'Generating production build...'
-TYPE=production webpack --bail --env=dist --progress -p --hide-modules
+echo 'Generating production build for es6 module...'
+NODE_ENV=production MODULE=es6 babel src --out-dir dist/es6 --ignore 'src/**/*.spec.jsx'
+
+echo 'Generating production docs...'
+NODE_ENV=production webpack --progress -p --hide-modules --config ./config/webpack.doc.js
+
