@@ -3,11 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'react-icheck/lib/Checkbox';
 import Radio from 'react-icheck/lib/Radio';
-import Empty from 'alexandria/Empty';
-import Grid from 'alexandria/Grid';
-import GridRow from 'alexandria/Grid/Row';
-import GridCell from 'alexandria/Grid/Cell';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import Empty from '../../alexandria/Empty';
+import Grid from '../../alexandria/Grid';
+import GridRow from '../../alexandria/Grid/Row';
+import GridCell from '../../alexandria/Grid/Cell';
+import SvgSymbol from '../../alexandria/SvgSymbol';
 
 require('./styles.scss');
 

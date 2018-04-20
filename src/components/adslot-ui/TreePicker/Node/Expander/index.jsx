@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GridCell from 'alexandria/Grid/Cell';
-import Spinner from 'alexandria/Spinner';
+import GridCell from '../../../../alexandria/Grid/Cell';
+import Spinner from '../../../../alexandria/Spinner';
 
 const TreePickerNodeExpander = ({ isLoading, onClick }) => {
   const props = {

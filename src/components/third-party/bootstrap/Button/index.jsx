@@ -7,8 +7,8 @@ import classNames from 'classnames';
 import BootstrapButton from 'react-bootstrap/lib/Button';
 import BootstrapPopover from 'react-bootstrap/lib/Popover';
 import BootstrapOverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
-import Spinner from 'alexandria/Spinner';
-import { expandDts } from 'lib/utils';
+import { expandDts } from '../../../../lib/utils';
+import Spinner from '../../../alexandria/Spinner';
 import './styles.scss';
 
 const adslotButtonPropTypes = {

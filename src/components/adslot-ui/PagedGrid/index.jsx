@@ -2,11 +2,11 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Pagination from 'react-bootstrap/lib/Pagination';
-import Empty from 'alexandria/Empty';
-import Grid from 'alexandria/Grid';
-import GridRow from 'alexandria/Grid/Row';
-import GridCell from 'alexandria/Grid/Cell';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import Empty from '../../alexandria/Empty';
+import Grid from '../../alexandria/Grid';
+import GridRow from '../../alexandria/Grid/Row';
+import GridCell from '../../alexandria/Grid/Cell';
+import SvgSymbol from '../../alexandria/SvgSymbol';
 
 require('./styles.scss');
 

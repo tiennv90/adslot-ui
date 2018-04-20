@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import ListPicker from 'adslot-ui/ListPicker';
-import Avatar from 'alexandria/Avatar';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import ListPicker from '../../adslot-ui/ListPicker';
+import Avatar from '../../alexandria/Avatar';
+import SvgSymbol from '../../alexandria/SvgSymbol';
 
 require('./styles.scss');
 

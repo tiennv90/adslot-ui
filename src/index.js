@@ -6,9 +6,6 @@ import Select from 'react-select';
 
 import DatePicker from 'react-datepicker';
 
-// React Bootstrap
-import { Button } from 'third-party';
-
 import Dropdown from 'react-bootstrap/lib/Dropdown';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import Modal from 'react-bootstrap/lib/Modal';
@@ -20,10 +17,13 @@ import Tab from 'react-bootstrap/lib/Tab';
 import Tabs from 'react-bootstrap/lib/Tabs';
 import NavItem from 'react-bootstrap/lib/NavItem';
 
-import 'styles/_bootstrap-custom.scss';
-import 'styles/_icheck-custom.scss';
-import 'styles/_react-datepicker-custom.scss';
-import 'styles/_react-select-custom.scss';
+import './styles/_bootstrap-custom.scss';
+import './styles/_icheck-custom.scss';
+import './styles/_react-datepicker-custom.scss';
+import './styles/_react-select-custom.scss';
+
+// React Bootstrap
+import { Button } from './components/third-party';
 
 import {
   Alert,
@@ -46,7 +46,7 @@ import {
   Tag,
   TileGrid,
   Totals,
-} from 'alexandria';
+} from './components/alexandria';
 
 import {
   Accordion,
@@ -74,7 +74,7 @@ import {
   UserListPicker,
   InformationBox,
   HoverDropdownMenu,
-} from 'adslot-ui';
+} from './components/adslot-ui';
 
 export {
   Accordion,

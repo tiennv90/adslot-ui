@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import SplitPane from 'adslot-ui/SplitPane';
-import TreePickerGrid from 'adslot-ui/TreePicker/Grid';
-import TreePickerNav from 'adslot-ui/TreePicker/Nav';
-import FlexibleSpacer from 'alexandria/FlexibleSpacer';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import SplitPane from '../../adslot-ui/SplitPane';
+import TreePickerGrid from '../../adslot-ui/TreePicker/Grid';
+import TreePickerNav from '../../adslot-ui/TreePicker/Nav';
+import FlexibleSpacer from '../../alexandria/FlexibleSpacer';
+import SvgSymbol from '../../alexandria/SvgSymbol';
 import TreePickerPropTypes from '../../prop-types/TreePickerPropTypes';
 
 require('./styles.scss');

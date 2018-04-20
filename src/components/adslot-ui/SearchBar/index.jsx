@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/lib/Button';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import SvgSymbol from '../../alexandria/SvgSymbol';
 
 require('./styles.scss');
 

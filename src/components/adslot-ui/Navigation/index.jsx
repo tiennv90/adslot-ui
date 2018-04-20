@@ -3,7 +3,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav } from 'react-bootstrap';
-import { expandDts } from 'lib/utils';
+import { expandDts } from '../../../lib/utils';
 
 import './styles.scss';
 

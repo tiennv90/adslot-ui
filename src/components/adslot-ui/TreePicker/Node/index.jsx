@@ -2,9 +2,9 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/lib/Button';
-import GridCell from 'alexandria/Grid/Cell';
-import GridRow from 'alexandria/Grid/Row';
-import TextEllipsis from 'adslot-ui/TextEllipsis';
+import TextEllipsis from '../../../adslot-ui/TextEllipsis';
+import GridCell from '../../../alexandria/Grid/Cell';
+import GridRow from '../../../alexandria/Grid/Row';
 import TreePickerNodeExpander from './Expander';
 import TreePickerPropTypes from '../../../prop-types/TreePickerPropTypes';
 

@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import fastStatelessWrapper from 'adslot-ui/fastStatelessWrapper';
-import TreePickerNode from 'adslot-ui/TreePicker/Node';
-import Empty from 'alexandria/Empty';
-import Grid from 'alexandria/Grid';
-import GridRow from 'alexandria/Grid/Row';
-import SvgSymbol from 'alexandria/SvgSymbol';
-import Spinner from 'alexandria/Spinner';
+import fastStatelessWrapper from '../../../adslot-ui/fastStatelessWrapper';
+import TreePickerNode from '../../../adslot-ui/TreePicker/Node';
+import Empty from '../../../alexandria/Empty';
+import Grid from '../../../alexandria/Grid';
+import GridRow from '../../../alexandria/Grid/Row';
+import SvgSymbol from '../../../alexandria/SvgSymbol';
+import Spinner from '../../../alexandria/Spinner';
 import TreePickerPropTypes from '../../../prop-types/TreePickerPropTypes';
 
 require('./styles.scss');

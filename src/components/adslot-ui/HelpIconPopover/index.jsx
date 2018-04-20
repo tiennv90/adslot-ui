@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import Popover from 'react-bootstrap/lib/Popover';
-import { expandDts } from 'lib/utils';
+import { expandDts } from '../../../lib/utils';
 
 require('./styles.scss');
 

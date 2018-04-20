@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { expandDts, classSuffixHelper } from 'lib/utils';
+import { expandDts, classSuffixHelper } from '../../../../lib/utils';
 import './styles.scss';
 
 const GridCell = ({ children, classSuffixes, onClick, stretch, dts, addonClassNames }) => {

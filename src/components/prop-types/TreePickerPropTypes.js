@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import SvgSymbol from 'alexandria/SvgSymbol';
+import SvgSymbol from '../alexandria/SvgSymbol';
 import idPropType from './idPropType';
 
 const baseNodeProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import FlexibleSpacer from 'alexandria/FlexibleSpacer';
+import FlexibleSpacer from '../../alexandria/FlexibleSpacer';
 import './styles.scss';
 
 const baseClass = 'pagetitle-component';
